@@ -17,29 +17,28 @@ const Works: React.FC = () => {
       <SimpleGrid columns={[1, 1, 2]} gap={6}>
         <Section>
           <WorkGridItem id="pizza" title="Pizza" thumbnail={pizza}>
-            Pizza ordering app, written in: React, Redux, SCSS, TypeScript.
+            Pizza ordering app.
           </WorkGridItem>
         </Section>
         <Section>
           <WorkGridItem id="techaim" title="Techaim" thumbnail={techaim}>
-            The TechAim Foundation makes the world of Technology and STEAM open
-            and accessible to girls and women in Kyrgyzstan and Central Asia.
+            The TechAim Foundation makes the world of Technology and STEAM open.
           </WorkGridItem>
         </Section>
 
         <Section delay={0.1}>
+          <WorkGridItem id="food" title="Food" thumbnail={food}>
+            Landing page for ordering healthy food, written without frameworks
+            and libraries on pure JavaScript.
+          </WorkGridItem>
+        </Section>
+        <Section delay={0.1}>
           <WorkGridItem
-            id="titanStroy"
+            id="titan-stroy"
             title="Titan Stroy"
             thumbnail={titanStroy}
           >
             A page for a construction company.
-          </WorkGridItem>
-        </Section>
-        <Section delay={0.1}>
-          <WorkGridItem id="food" title="Food" thumbnail={food}>
-            Landing page for ordering healthy food, written without frameworks
-            and libraries on pure JavaScript.
           </WorkGridItem>
         </Section>
       </SimpleGrid>

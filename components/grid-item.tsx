@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { Global } from '@emotion/react'
 
 interface IGridItemProps {
-  children: JSX.Element | JSX.Element[]
+  children?: JSX.Element | JSX.Element[]
   href: string
   title: string
   thumbnail: string

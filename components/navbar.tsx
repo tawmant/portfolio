@@ -83,9 +83,6 @@ const NavBar: FC<INavBarProps> = props => {
           <LinkItem href="/works" path={path}>
             Works
           </LinkItem>
-          <LinkItem href="/posts" path={path}>
-            Posts
-          </LinkItem>
         </Stack>
 
         <Box flex={1} align="right">
@@ -104,9 +101,6 @@ const NavBar: FC<INavBarProps> = props => {
                 </NextLink>
                 <NextLink href="/works" passHref>
                   <MenuItem as={Link}>Works</MenuItem>
-                </NextLink>
-                <NextLink href="/posts" passHref>
-                  <MenuItem as={Link}>Posts</MenuItem>
                 </NextLink>
               </MenuList>
             </Menu>
