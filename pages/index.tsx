@@ -134,7 +134,7 @@ const Page = () => {
           </Heading>
           <List>
             <ListItem>
-              <Link href="https://github.com/tawmant" target="_blank">
+              <Link href="https://github.com/tawmant/" target="_blank">
                 <Button
                   variant="ghost"
                   colorScheme="teal"
@@ -145,7 +145,7 @@ const Page = () => {
               </Link>
             </ListItem>
             <ListItem>
-              <Link href="https://instagram.com/tawmant" target="_blank">
+              <Link href="https://instagram.com/tawmant/" target="_blank">
                 <Button
                   variant="ghost"
                   colorScheme="teal"
