@@ -1,4 +1,4 @@
-import { Container, Link, List, ListItem } from '@chakra-ui/react'
+import { Container, Link, List, ListItem, Text } from '@chakra-ui/react'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
 import { Title, WorkImage, Meta } from '../../components/work'
 import Layout from '../../components/layouts/article'
@@ -11,6 +11,7 @@ const Work = () => (
       <P>
         Landing page for ordering healthy food, written in pure javascript:
         slider, tabs, calculator, timer and dynamic layout.
+        <Text color="red">*no adaptive.</Text>
       </P>
       <List ml={4} my={4}>
         <ListItem>

@@ -156,7 +156,7 @@ const Page = () => {
               </Link>
             </ListItem>
             <ListItem>
-              <Link href="https://discord.gg/QfsG5Kj" target="_blank">
+              <Link href="https://t.me/tawmant_work" target="_blank">
                 <Button
                   variant="ghost"
                   colorScheme="teal"
