@@ -1,17 +1,18 @@
-// @ts-ignore
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
+import { Object3D } from 'three'
 
-export const loadGLTFModel = (
+export function loadGLTFModel(
   scene: any,
   glbPath: any,
   options = { receiveShadow: true, castShadow: true }
-) => {
+) {
   const { receiveShadow, castShadow } = options
   return new Promise((resolve, reject) => {
     const loader = new GLTFLoader()
 
     loader.load(
-      (glbPath: any, gltf: any) => {
+      glbPath,
+      gltf => {
         const obj = gltf.scene
         obj.name = 'dog'
         obj.position.y = 0
@@ -20,8 +21,8 @@ export const loadGLTFModel = (
         obj.castShadow = castShadow
         scene.add(obj)
 
-        obj.traverse(function (child: any) {
-          if (child.isMesh) {
+        obj.traverse(function (child) {
+          if ((<any>child).isMesh) {
             child.castShadow = castShadow
             child.receiveShadow = receiveShadow
           }
@@ -29,7 +30,7 @@ export const loadGLTFModel = (
         resolve(obj)
       },
       undefined,
-      function (error: any) {
+      function (error) {
         reject(error)
       }
     )

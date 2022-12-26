@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import React from 'react'
 import Head from 'next/head'
 import { GridItemStyle } from '../grid-item'
+import { Box } from '@chakra-ui/react'
 
 const variants = {
   hidden: { opacity: 0, x: 0, y: 20 },
@@ -23,7 +24,7 @@ const Layout: React.FC<ILayoutProps> = ({ children, title }) => {
       variants={variants}
       transition={{ duration: 0.4, type: 'easeInOut' }}
     >
-      <>
+      <Box position="relative">
         {title && (
           <Head>
             <title>{title} - Azamat Askarov</title>
@@ -31,7 +32,7 @@ const Layout: React.FC<ILayoutProps> = ({ children, title }) => {
         )}
         {children}
         <GridItemStyle />
-      </>
+      </Box>
     </motion.article>
   )
 }

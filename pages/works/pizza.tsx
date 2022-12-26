@@ -10,7 +10,7 @@ const Work = () => (
       <List ml={4} my={4}>
         <ListItem>
           <Meta>Website</Meta>
-          <Link href="https://react-firebase-pizza.web.app/">
+          <Link href="https://react-firebase-pizza.web.app/" target="_blank">
             https://react-firebase-pizza.web.app/ <ExternalLinkIcon mx="2px" />
           </Link>
         </ListItem>

@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import {
+  As,
   Box,
   Button,
   Container,
@@ -16,13 +17,42 @@ import Layout from '../components/layouts/article'
 import Section from '../components/UI/section'
 import Paragraph from '../components/UI/paragraph'
 import { BioYear, BioSection } from '../components/UI/bio'
-import { IoLogoInstagram, IoLogoGithub, IoLogoDiscord } from 'react-icons/io5'
+import { IoLogoInstagram, IoLogoGithub, IoLogoGitlab } from 'react-icons/io5'
 import { BsTelegram } from 'react-icons/bs'
+import { AiFillLinkedin } from 'react-icons/ai'
 
 import { ChevronRightIcon } from '@chakra-ui/icons'
-import { GridItem } from '../components/grid-item'
+
+interface ISocialMediaRef {
+  title: string
+  link: string
+  icon: As<any> | undefined
+}
 
 const Page = () => {
+  const socialMediaRef = useRef<ISocialMediaRef[]>([
+    {
+      title: '@tawmant',
+      link: 'https://www.linkedin.com/in/tawmant/',
+      icon: AiFillLinkedin
+    },
+    {
+      title: '@tawmant',
+      link: 'https://gitlab.com/tawmant/',
+      icon: IoLogoGitlab
+    },
+    {
+      title: '@tawmant',
+      link: 'https://github.com/tawmant/',
+      icon: IoLogoGithub
+    },
+    {
+      title: '@tawmant_work',
+      link: 'https://t.me/tawmant_work/',
+      icon: BsTelegram
+    }
+  ])
+
   return (
     <Layout>
       <Container>
@@ -111,11 +141,27 @@ const Page = () => {
           </BioSection>
           <BioSection>
             <BioYear>2021</BioYear>I worked at{' '}
-            <Link target="_blank" href="https://atek.kg/">
+            <Link
+              target="_blank"
+              href="https://www.linkedin.com/company/a-tek-digital-studio/"
+            >
               A-tek
             </Link>{' '}
-            from June to October, I was developing SPA on React and landing
-            pages, and I also had experience in freelancing.
+            from May to September. From October to the end of the year, I worked
+            remotely for Simple Apps Dev. I was developing SPA on ReactJS, SSR
+            on NextJS and landing pages, and I also had experience in
+            freelancing.
+          </BioSection>
+          <BioSection>
+            <BioYear>2022</BioYear>
+            From the beginning to the end of the year, I worked at{' '}
+            <Link
+              target="_blank"
+              href="https://www.linkedin.com/company/zettasoft-io/"
+            >
+              ZettaSoft IO
+            </Link>{' '}
+            as a middle developer.
           </BioSection>
         </Section>
 
@@ -133,39 +179,19 @@ const Page = () => {
             On the web
           </Heading>
           <List>
-            <ListItem>
-              <Link href="https://github.com/tawmant/" target="_blank">
-                <Button
-                  variant="ghost"
-                  colorScheme="teal"
-                  leftIcon={<Icon as={IoLogoGithub} />}
-                >
-                  @tawmant
-                </Button>
-              </Link>
-            </ListItem>
-            <ListItem>
-              <Link href="https://instagram.com/tawmant/" target="_blank">
-                <Button
-                  variant="ghost"
-                  colorScheme="teal"
-                  leftIcon={<Icon as={IoLogoInstagram} />}
-                >
-                  @tawmant
-                </Button>
-              </Link>
-            </ListItem>
-            <ListItem>
-              <Link href="https://t.me/tawmant_work" target="_blank">
-                <Button
-                  variant="ghost"
-                  colorScheme="teal"
-                  leftIcon={<Icon as={BsTelegram} />}
-                >
-                  @tawmant_work
-                </Button>
-              </Link>
-            </ListItem>
+            {socialMediaRef.current.map(socialMediaItem => (
+              <ListItem key={socialMediaItem.link}>
+                <Link href={socialMediaItem.link} target="_blank">
+                  <Button
+                    variant="ghost"
+                    colorScheme="teal"
+                    leftIcon={<Icon as={socialMediaItem.icon} />}
+                  >
+                    {socialMediaItem.title}
+                  </Button>
+                </Link>
+              </ListItem>
+            ))}
           </List>
         </Section>
       </Container>
