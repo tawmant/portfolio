@@ -47,7 +47,7 @@ const Index: FC = () => {
       </Heading>
       <SimpleGrid columns={[1, 1, 2]} gap={6}>
         {worksRef.current.map(work => (
-          <Section delay={work.delay}>
+          <Section key={work.id} delay={work.delay}>
             <WorkGridItem
               id={work.id}
               title={work.title}
